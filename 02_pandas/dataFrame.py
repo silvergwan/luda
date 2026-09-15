@@ -11,5 +11,8 @@ df = pd.DataFrame(data)
 is_over_safe = df["안전성"] >= 0.9
 is_over_naturalness = df["자연스러움"] >= 0.8
 
+natural_conversations = df[is_over_naturalness]
+
 print(is_over_safe)
 print(is_over_naturalness)
+print(natural_conversations)
