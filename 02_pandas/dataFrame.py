@@ -8,4 +8,6 @@ data = {
 
 df = pd.DataFrame(data)
 
-print(df["안전성"])
+is_over = df["안전성"] >= 0.9
+
+print(is_over)
