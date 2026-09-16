@@ -7,8 +7,11 @@ data = {
     "안전성": [1.0, 0.9, 0.8],
 }
 
-# 딕셔너리의 키는 열이름, 리스트는 그 열에들어갈 값들이 된다, 왼쪽의 숫자는 행을 구분하는 인덱스
+# 딕셔너리의 키는 열이름, 리스트는 그 열에 들어갈 값들이 된다, 왼쪽의 숫자는 행을 구분하는 인덱스
 df = pd.DataFrame(data)
+
+# 각 행의 평균을 구한 결과가 "평균" 열에 추가
+df["평균"] = df.mean(axis=1)
 
 is_over_safe = df["안전성"] >= 0.9
 is_over_naturalness = df["자연스러움"] >= 0.8
@@ -23,5 +26,4 @@ print(is_over_safe)
 print(is_over_naturalness)
 print(natural_conversations)
 print(over_score_conversation)
-
-
+print(df)
